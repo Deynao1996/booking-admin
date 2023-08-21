@@ -57,9 +57,9 @@ const SideBar = () => {
         to={item.to ? item.to : '/'}
         state={{ data: item.label.toLowerCase() }}
         onClick={item.label === 'Logout' ? handleLogOut : () => ({})}
-        isDisabled={!currentUser?._id}
+        isDisabled={!currentUser?._id || item.disabled}
       >
-        <ListItemButton>
+        <ListItemButton disabled={!currentUser?._id || item.disabled}>
           <StyledListItemIcon>{item.icon}</StyledListItemIcon>
           <ListItemText
             primary={item.label}

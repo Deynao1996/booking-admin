@@ -31,16 +31,20 @@ export const getSideData = (userId) => {
     {
       title: 'USEFUL',
       items: [
-        { label: 'Stats', icon: <Analytics /> },
-        { label: 'Notifications', icon: <NotificationsNone /> }
+        { label: 'Stats', icon: <Analytics />, disabled: true },
+        { label: 'Notifications', icon: <NotificationsNone />, disabled: true }
       ]
     },
     {
       title: 'SERVICE',
       items: [
-        { label: 'System Health', icon: <SettingsSystemDaydream /> },
-        { label: 'Logs', icon: <PermDataSetting /> },
-        { label: 'Settings', icon: <Settings /> }
+        {
+          label: 'System Health',
+          icon: <SettingsSystemDaydream />,
+          disabled: true
+        },
+        { label: 'Logs', icon: <PermDataSetting />, disabled: true },
+        { label: 'Settings', icon: <Settings />, disabled: true }
       ]
     },
     {

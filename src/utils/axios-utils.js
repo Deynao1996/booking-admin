@@ -1,8 +1,8 @@
 import axios from 'axios'
 
 const client = axios.create({
-  // baseURL: 'http://localhost:8800/api',
-  // headers: { 'Access-Control-Allow-Credentials': true }
+  baseURL: process.env.REACT_APP_API,
+  headers: { 'Access-Control-Allow-Credentials': true }
 })
 
 export const request = ({ ...options }) => {

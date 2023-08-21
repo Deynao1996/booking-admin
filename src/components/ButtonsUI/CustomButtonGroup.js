@@ -33,13 +33,14 @@ const CustomButtonGroup = ({ params, label }) => {
       <ButtonGroup variant="outlined" size="small">
         <Button
           color="primary"
+          aria-label="Open"
           onClick={() => {
             navigate(`/${label}/${_id}`)
           }}
         >
           View
         </Button>
-        <Button color="error" onClick={handleClickOpen}>
+        <Button color="error" aria-label="Remove" onClick={handleClickOpen}>
           Delete
         </Button>
       </ButtonGroup>

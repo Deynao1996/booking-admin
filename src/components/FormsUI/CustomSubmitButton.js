@@ -19,7 +19,9 @@ const CustomSubmitButton = ({ children, withLoading, ...props }) => {
   return withLoading ? (
     <LoadingButton {...configButton}>{children}</LoadingButton>
   ) : (
-    <Button {...configButton}>{children}</Button>
+    <Button aria-label="Send" {...configButton}>
+      {children}
+    </Button>
   )
 }
 

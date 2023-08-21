@@ -18,6 +18,7 @@ import { useQueries } from '@tanstack/react-query'
 import { formatDistance } from 'date-fns'
 import { BookmarkAdded } from '@mui/icons-material'
 import { useRemoveNotifications } from '../../hooks/useRemoveNotifications'
+import { getCroppedImageUrl } from '../../utils/crop-url-utils'
 
 export const getFullName = (user) => {
   return user.lastName === 'Not provide' && user.name === 'Not provide'
@@ -110,6 +111,11 @@ const NotificationMenu = ({ anchorEl, handleCloseMenu, notifications }) => {
       if (!user) return
 
       const { userId, photo, fullName } = user
+      const userImageUrl = getCroppedImageUrl(
+        photo,
+        /(upload\/)(.*)/,
+        '$1c_thumb,g_face,h_60,w_60/$2'
+      )
       const text = setNotificationText(not.type, fullName)
       const linkPath = not.metaId ? `/orders/${not.metaId}` : `/users/${userId}`
       const timeAgo = formatDistance(new Date(not.createdAt), new Date(), {
@@ -125,7 +131,7 @@ const NotificationMenu = ({ anchorEl, handleCloseMenu, notifications }) => {
           >
             <Avatar
               alt={fullName}
-              src={photo}
+              src={userImageUrl}
               {...stringAvatar(fullName)}
               sx={{ mr: 1 }}
             />

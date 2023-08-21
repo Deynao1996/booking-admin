@@ -20,6 +20,7 @@ import React, { useCallback, useState } from 'react'
 import { StyledLink } from '../../styled/styled'
 import MobileMenu from '../MenuUI/MobileMenu'
 import Notification from './Notification'
+import { getCroppedImageUrl } from '../../utils/crop-url-utils'
 
 const StyledRightWrapper = styled('div')(({ theme }) => ({
   padding: theme.spacing(0, 2),
@@ -47,7 +48,11 @@ const CustomAppBar = ({ toggleDrawer }) => {
   const [mobileAnchorEl, setMobileAnchorEl] = useState(null)
 
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
-
+  const userImageUrl = getCroppedImageUrl(
+    currentUser?.photo,
+    /(upload\/)(.*)/,
+    '$1c_thumb,g_face,h_64,w_64/$2'
+  )
   const handleCloseMobileMenu = useCallback(() => setMobileAnchorEl(null), [])
 
   const handleLogout = useCallback(() => {
@@ -110,7 +115,7 @@ const CustomAppBar = ({ toggleDrawer }) => {
               {currentUser?.photo ? (
                 <Avatar
                   alt={currentUser.userName}
-                  src={currentUser.photo}
+                  src={userImageUrl}
                   sx={{ ml: 1 }}
                 />
               ) : (

@@ -27,8 +27,10 @@ const ConfirmDialog = ({ isDialogOpen, handleClose, removeData, multiple }) => {
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button onClick={handleClose}>Disagree</Button>
-        <Button onClick={() => removeData()} autoFocus>
+        <Button aria-label="Close" onClick={handleClose}>
+          Disagree
+        </Button>
+        <Button aria-label="Delete" onClick={() => removeData()} autoFocus>
           Agree
         </Button>
       </DialogActions>

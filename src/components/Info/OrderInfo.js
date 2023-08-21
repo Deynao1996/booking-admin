@@ -19,6 +19,7 @@ import { useMemo } from 'react'
 import { useHandleError } from '../../hooks/useHandleError'
 import { convertBoolToVariant } from '../../utils/convert-variant-utils'
 import { StyledBox, StyledCardContent, StyledLink } from '../../styled/styled'
+import { getCroppedImageUrl } from '../../utils/crop-url-utils'
 
 const StyledAvatar = styled(Avatar)(({ theme }) => ({
   width: 200,
@@ -141,7 +142,14 @@ const OrderInfo = ({ orderId }) => {
       />
       <StyledCardContent>
         {!isLoading ? (
-          <StyledAvatar alt={data?.data.userName} src={data?.data.hotelImage} />
+          <StyledAvatar
+            alt={data?.data.userName}
+            src={getCroppedImageUrl(
+              data?.data.hotelImage,
+              /(upload\/)(.*)/,
+              '$1c_thumb,g_face,h_250,w_250/$2'
+            )}
+          />
         ) : (
           <Skeleton
             animation="wave"

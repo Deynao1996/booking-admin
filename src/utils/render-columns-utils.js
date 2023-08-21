@@ -2,6 +2,7 @@ import { Avatar, Box, Button, Tooltip, Typography } from '@mui/material'
 import CustomButtonGroup from '../components/ButtonsUI/CustomButtonGroup'
 import { format } from 'date-fns'
 import styled from '@emotion/styled'
+import { getCroppedImageUrl } from './crop-url-utils'
 
 const StyledTypography = styled(Typography)(() => ({
   color: 'inherit',
@@ -35,6 +36,11 @@ export function createUserColumns(label) {
       valueGetter: (params) => params.row,
       sortComparator: _userNameComparator,
       renderCell: (params) => {
+        const imageUrl = getCroppedImageUrl(
+          params.row.photo,
+          /(upload\/)(.*)/,
+          '$1c_thumb,g_face,h_64,w_64/$2'
+        )
         return (
           <Box
             sx={{
@@ -46,7 +52,7 @@ export function createUserColumns(label) {
           >
             <Avatar
               alt={params.row.userName}
-              src={params.row.photo}
+              src={imageUrl}
               sx={{ width: 32, height: 32 }}
             />
             {_setUserName(params.row)}
@@ -86,6 +92,7 @@ export function createUserColumns(label) {
           <Button
             variant="outlined"
             size="small"
+            role="Presentation"
             sx={{ pointerEvents: 'none' }}
             color={btnColor}
           >
@@ -131,6 +138,11 @@ export function createHotelsColumns(label) {
       valueGetter: (params) => params.row.name,
       sortComparator: _hotelsComparator,
       renderCell: (params) => {
+        const imageUrl = getCroppedImageUrl(
+          params.row.photos[0],
+          /max\d+x\d+/,
+          'max100x100'
+        )
         return (
           <Box
             sx={{
@@ -142,7 +154,7 @@ export function createHotelsColumns(label) {
           >
             <Avatar
               alt={params.row.name}
-              src={params.row.photos[0]}
+              src={imageUrl}
               sx={{ width: 32, height: 32 }}
             />
             {params.row.name}
@@ -178,6 +190,7 @@ export function createHotelsColumns(label) {
           <Button
             variant="outlined"
             size="small"
+            role="Presentation"
             sx={{ pointerEvents: 'none' }}
             color={btnColor}
           >
@@ -223,6 +236,11 @@ export function createOrdersColumns(label) {
       valueGetter: (params) => params.row.hotelName,
       sortComparator: _hotelsComparator,
       renderCell: (params) => {
+        const imageUrl = getCroppedImageUrl(
+          params.row.hotelImage,
+          /(upload\/)(.*)/,
+          '$1c_thumb,g_face,h_64,w_64/$2'
+        )
         return (
           <Box
             sx={{
@@ -234,7 +252,7 @@ export function createOrdersColumns(label) {
           >
             <Avatar
               alt={params.row.hotelName}
-              src={params.row.hotelImage}
+              src={imageUrl}
               sx={{ width: 32, height: 32 }}
             />
             <StyledTypography noWrap>{params.row.hotelName}</StyledTypography>
@@ -292,6 +310,7 @@ export function createOrdersColumns(label) {
           <Button
             variant="outlined"
             size="small"
+            role="Presentation"
             sx={{ pointerEvents: 'none' }}
             color={params.row.status === 'done' ? 'success' : 'warning'}
           >
@@ -337,6 +356,11 @@ export function createRoomsColumns(label) {
       valueGetter: (params) => params.row.hotelName,
       sortComparator: _hotelsComparator,
       renderCell: (params) => {
+        const imageUrl = getCroppedImageUrl(
+          params.row.hotelImage,
+          /max\d+x\d+/,
+          'max100x100'
+        )
         return (
           <Box
             sx={{
@@ -348,7 +372,7 @@ export function createRoomsColumns(label) {
           >
             <Avatar
               alt={params.row.hotelName}
-              src={params.row.hotelImage}
+              src={imageUrl}
               sx={{ width: 32, height: 32 }}
             />
             {params.row.hotelName}

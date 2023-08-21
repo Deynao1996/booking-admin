@@ -9,10 +9,11 @@ import styled from '@emotion/styled'
 import { loginToAccount } from '../utils/service-utils'
 import { useAuthProvider } from '../contexts/AuthContext'
 import { useSnackbar } from 'notistack'
+import DisclaimerDialog from './Dialogs/DisclaimerDialog'
 
 const initialValues = {
-  userName: '',
-  password: ''
+  userName: 'dbvision',
+  password: '121212'
 }
 
 const validationSchema = Yup.object({
@@ -46,6 +47,7 @@ const SignIn = () => {
 
   return (
     <>
+      <DisclaimerDialog />
       <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
         <LockOutlinedIcon />
       </Avatar>
@@ -67,6 +69,7 @@ const SignIn = () => {
               autoFocus
               autoComplete="username"
               required={true}
+              disabled
             />
             <CustomTextField
               name="password"
@@ -75,6 +78,7 @@ const SignIn = () => {
               id="password"
               autoComplete="current-password"
               required={true}
+              disabled
             />
             <CustomSubmitButton
               margin="normal"

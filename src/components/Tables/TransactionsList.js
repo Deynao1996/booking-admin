@@ -18,13 +18,13 @@ import {
   Tooltip,
   Typography
 } from '@mui/material'
-import React from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { format } from 'date-fns'
 import { fetchTransactions } from '../../utils/service-utils'
 import { useHandleError } from '../../hooks/useHandleError'
 import { useAuthProvider } from '../../contexts/AuthContext'
 import { StyledLink } from '../../styled/styled'
+import { getCroppedImageUrl } from '../../utils/crop-url-utils'
 
 const dummyArr = [
   {
@@ -85,10 +85,16 @@ const TransactionsList = ({ requiredQuery, ...props }) => {
   function renderRows(data) {
     const mappedArr =
       data?.data?.orders.length === 0 ? dummyArr : data.data.orders
+
     return mappedArr.map((row, i) => {
       const createdAt = row.createdAt
         ? format(new Date(row.createdAt), 'dd MMMM')
         : '-'
+      const hotelImageUrl = getCroppedImageUrl(
+        row.hotelImage,
+        /(upload\/)(.*)/,
+        '$1c_thumb,g_face,h_64,w_64/$2'
+      )
 
       return (
         <StyledTableRow
@@ -114,7 +120,7 @@ const TransactionsList = ({ requiredQuery, ...props }) => {
             >
               <Avatar
                 alt="Hotel"
-                src={row.hotelImage}
+                src={hotelImageUrl}
                 sx={{ width: 32, height: 32 }}
               />
               {row.hotelName}
@@ -135,6 +141,7 @@ const TransactionsList = ({ requiredQuery, ...props }) => {
             <Button
               variant="outlined"
               size="small"
+              role="Presentation"
               sx={{ pointerEvents: 'none' }}
               color={row.status === 'done' ? 'success' : 'warning'}
             >

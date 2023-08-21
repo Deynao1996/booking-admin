@@ -1,10 +1,7 @@
-import styled from '@emotion/styled'
 import { ManageAccounts } from '@mui/icons-material'
 import {
-  Avatar,
   Box,
   Card,
-  CardContent,
   CardHeader,
   IconButton,
   Skeleton,
@@ -26,6 +23,7 @@ import {
   StyledLink
 } from '../../styled/styled'
 import React from 'react'
+import { getCroppedImageUrl } from '../../utils/crop-url-utils'
 
 const CustomerInfo = ({ userId }) => {
   const { data, isLoading, isError, error } = useQuery(
@@ -33,6 +31,12 @@ const CustomerInfo = ({ userId }) => {
     fetchUser
   )
   useHandleError(isError, error)
+
+  const imageUrl = getCroppedImageUrl(
+    data?.data.photo,
+    /(upload\/)(.*)/,
+    '$1c_thumb,g_face,h_250,w_250/$2'
+  )
 
   function setDateOfRegistration(data) {
     return data?.data ? format(new Date(data.data.createdAt), 'dd/MM/yy') : ''
@@ -120,7 +124,7 @@ const CustomerInfo = ({ userId }) => {
         {!isLoading ? (
           <StyledAvatar
             alt={data?.data.userName}
-            src={data?.data.photo}
+            src={imageUrl}
             {...stringAvatar(fullName)}
           />
         ) : (

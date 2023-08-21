@@ -20,6 +20,7 @@ import {
   StyledCardContent,
   StyledLink
 } from '../../styled/styled'
+import { getCroppedImageUrl } from '../../utils/crop-url-utils'
 
 const HotelInfo = ({ hotelId }) => {
   const { data, isLoading, isError, error } = useQuery(
@@ -88,7 +89,14 @@ const HotelInfo = ({ hotelId }) => {
       />
       <StyledCardContent>
         {!isLoading ? (
-          <StyledAvatar alt={data?.data.name} src={data?.data.photos[0]} />
+          <StyledAvatar
+            alt={data?.data.name}
+            src={getCroppedImageUrl(
+              data?.data.photos[0],
+              /max\d+x\d+/,
+              'max200x200'
+            )}
+          />
         ) : (
           <Skeleton
             animation="wave"

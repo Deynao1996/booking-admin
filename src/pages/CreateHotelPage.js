@@ -197,7 +197,9 @@ const CreateHotelPage = () => {
       onSuccess(res, resetForm)
       navigate(-1)
     } catch (e) {
-      enqueueSnackbar('Something went wrong!', { variant: 'error' })
+      enqueueSnackbar(e.message || 'Something went wrong!', {
+        variant: 'error'
+      })
     } finally {
       setIsLoading(false)
     }

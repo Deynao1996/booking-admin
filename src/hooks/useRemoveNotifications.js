@@ -1,13 +1,10 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { useHandleError } from './useHandleError'
+import { useSnackbar } from 'notistack'
 
 export const useRemoveNotifications = ({ mutationFunc, label }) => {
   const queryClient = useQueryClient()
-  const {
-    mutate: deleteNotifications,
-    isError,
-    error
-  } = useMutation(mutationFunc, {
+  const { enqueueSnackbar } = useSnackbar()
+  const { mutate: deleteNotifications } = useMutation(mutationFunc, {
     onMutate: async () => {
       await queryClient.cancelQueries(label)
       const prevData = queryClient.getQueryData([label])
@@ -20,11 +17,13 @@ export const useRemoveNotifications = ({ mutationFunc, label }) => {
 
       return { prevData }
     },
-    onError: (_e, _hero, context) => {
+    onError: (e, _hero, context) => {
+      enqueueSnackbar(e.message || 'Something went wrong!', {
+        variant: 'error'
+      })
       queryClient.setQueriesData([label], context.prevData)
     }
   })
-  useHandleError(isError, error)
 
   return { deleteNotifications }
 }
