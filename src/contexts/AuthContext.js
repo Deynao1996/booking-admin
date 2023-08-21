@@ -72,8 +72,16 @@ export const AuthProvider = ({ children }) => {
   }, [])
 
   useEffect(() => {
-    if (!localStorage.getItem('manual-logout'))
-      axios.get('/auth/login/with-jwt').then(saveCurrentUser).catch(handleError)
+    if (!localStorage.getItem('manual-logout')) {
+      const axiosCfg = {
+        url: `${process.env.REACT_APP_API}/auth/login/with-jwt`,
+        method: 'get',
+        withCredentials: true,
+        credentials: 'include',
+        headers: { 'Access-Control-Allow-Credentials': true }
+      }
+      axios(axiosCfg).then(saveCurrentUser).catch(handleError)
+    }
   }, [])
 
   const value = {

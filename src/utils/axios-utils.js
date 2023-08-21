@@ -3,6 +3,7 @@ import axios from 'axios'
 const client = axios.create({
   baseURL: process.env.REACT_APP_API,
   withCredentials: true,
+  credentials: 'include',
   headers: { 'Access-Control-Allow-Credentials': true }
 })
 
