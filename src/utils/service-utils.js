@@ -185,10 +185,6 @@ export const deleteAllNotifications = async () => {
   return await request({ url: '/notifications', method: 'DELETE' })
 }
 
-export const uploadImage = async (data) => {
-  return await request({ url: CLOUD_API, method: 'POST', data })
-}
-
 function setSearchParams(params) {
   const searchParams = _getSearchParams(params?.queryKey[1])
   return params.pageParam
