@@ -51,11 +51,16 @@ const OrderInfo = ({ orderId }) => {
   useHandleError(isFlatsError, flatsError)
 
   function setOrderedRoom(data) {
-    const { _id, title, roomNumbers } = data?.data[0]
-    const { number } = roomNumbers.find((room) => room._id === reservedRoomId)
+    const rooms = data?.data
+    const currFlat = rooms.reduce((prev, curr) => {
+      const item = curr.roomNumbers.find((num) => num._id === reservedRoomId)
+      if (item) prev.push({ ...item, title: curr.title, roomId: curr._id })
+      return prev
+    }, [])
+
     return {
-      name: `${number}: ${title}`,
-      roomId: _id,
+      name: `${currFlat[0]?.number}: ${currFlat[0]?.title}`,
+      roomId: currFlat[0]?.roomId,
       currentRoomId: reservedRoomId
     }
   }
