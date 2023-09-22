@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Booking Admin Dashboard - Admin Panel for Booking Hotel Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Booking Admin Dashboard is an admin panel for the Booking hotel web application. It provides administrative capabilities for managing and controlling various aspects of the [Booking project](https://github.com/Deynao1996/booking). This repository contains the client part of the admin dashboard, while the backend part can be found in the [booking-server repository](https://github.com/Deynao1996/booking-server).
 
-## Available Scripts
+Explore the Booking Admin Dashboard, which includes both dark and light themes, registration, authentication features, and functionalities for managing users, orders, hotels, rooms, and more.
 
-In the project directory, you can run:
+![Booking Admin Dashboard Preview](https://res.cloudinary.com/dkl9cqqui/image/upload/v1695352183/dash_1_esgxwi.jpg)
 
-### `npm start`
+## Live Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Check out the live demo of the Booking Admin Dashboard: [Admin Dashboard Live Demo](https://dbvision-admin.netlify.app)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Please note that the demo is hosted on a free hosting service, and the server may automatically go to sleep if there are no requests from the client side. In such cases, it may take 30-60 seconds for the server to wake up when you access the demo.
 
-### `npm test`
+It's important to know that that some functionality in this demo has been limited for security reasons.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Source Code
 
-### `npm run build`
+Find the source code for this client part of the project on GitHub: [Admin Dashboard Source Code](https://github.com/Deynao1996/booking-admin)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Backend Repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+For the backend part of the Booking admin dashboard, visit the [booking-server repository](https://github.com/Deynao1996/booking-server).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting Started
 
-### `npm run eject`
+To run this project locally, follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Prerequisites
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Before you begin, ensure you have the following software and dependencies installed:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Node.js and npm
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Installation
 
-## Learn More
+1. Clone the repository to your local machine:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   git clone https://github.com/Deynao1996/booking-admin.git
+2. Navigate to the project directory:
+   ```bash
+   cd booking-admin
+3. Install project dependencies:
+   ```bash
+   npm install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Running the project
+To start the development server, run:
+```bash
+npm start
+```
+This will launch the application in development mode.
 
-### Code Splitting
+### Contributing
+We welcome contributions to make this project even better. If you'd like to contribute, please follow these guidelines:
+1. Fork this repository.
+2. Create a new branch for your changes.
+3. Make your improvements and commit them.
+4. Submit a pull request with a detailed description of your changes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the [MIT License](https://github.com/Deynao1996/booking-admin/blob/master/LICENSE.txt).
