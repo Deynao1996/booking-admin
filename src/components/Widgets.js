@@ -81,7 +81,11 @@ const CustomCard = ({
             !isLoading && (
               <Tooltip title={`Add new ${title}`}>
                 <StyledLink to={`/create/${title}`}>
-                  <IconButton size="small" color="primary">
+                  <IconButton
+                    size="small"
+                    color="primary"
+                    aria-label={`Add new ${title}`}
+                  >
                     {addIcon}
                   </IconButton>
                 </StyledLink>
@@ -117,8 +121,10 @@ const CustomCard = ({
           {!isLoading ? (
             <IconButton
               size="small"
+              component="div"
               edge="end"
               variant="outlined"
+              aria-label="Action description"
               sx={{
                 bgcolor: (theme) =>
                   theme.palette.mode === 'light' ? btnColor[50] : grey[800],

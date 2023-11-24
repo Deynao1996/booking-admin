@@ -1,14 +1,14 @@
-# Booking Admin Dashboard - Admin Panel for Booking Hotel Web Application
+# Booking Admin Dashboard - Admin Panel for Roomify Hotel Web Application
 
-Booking Admin Dashboard is an admin panel for the Booking hotel web application. It provides administrative capabilities for managing and controlling various aspects of the [Booking project](https://github.com/Deynao1996/booking). This repository contains the client part of the admin dashboard, while the backend part can be found in the [booking-server repository](https://github.com/Deynao1996/booking-server).
+Roomify Admin Dashboard is an admin panel for the Roomify hotel web application. It provides administrative capabilities for managing and controlling various aspects of the [Roomify project](https://github.com/Deynao1996/booking). This repository contains the client part of the admin dashboard, while the backend part can be found in the [booking-server repository](https://github.com/Deynao1996/booking-server).
 
-Explore the Booking Admin Dashboard, which includes both dark and light themes, registration, authentication features, and functionalities for managing users, orders, hotels, rooms, and more.
+Explore the Roomify Admin Dashboard, which includes both dark and light themes, registration, authentication features, and functionalities for managing users, orders, hotels, rooms, and more.
 
-![Booking Admin Dashboard Preview](https://res.cloudinary.com/dkl9cqqui/image/upload/v1695352183/dash_1_esgxwi.jpg)
+![Roomify Admin Dashboard Preview](https://res.cloudinary.com/dkl9cqqui/image/upload/v1700823601/mockup-admin_qf6seg.jpg)
 
 ## Live Demo
 
-Check out the live demo of the Booking Admin Dashboard: [Admin Dashboard Live Demo](https://dbvision-admin.netlify.app)
+Check out the live demo of the Roomify Admin Dashboard: [Admin Dashboard Live Demo](https://dbvision-admin.netlify.app)
 
 Please note that the demo is hosted on a free hosting service, and the server may automatically go to sleep if there are no requests from the client side. In such cases, it may take 30-60 seconds for the server to wake up when you access the demo.
 
@@ -20,7 +20,7 @@ Find the source code for this client part of the project on GitHub: [Admin Dashb
 
 ## Backend Repository
 
-For the backend part of the Booking admin dashboard, visit the [booking-server repository](https://github.com/Deynao1996/booking-server).
+For the backend part of the Roomify admin dashboard, visit the [booking-server repository](https://github.com/Deynao1996/booking-server).
 
 ## Getting Started
 

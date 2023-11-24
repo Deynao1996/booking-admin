@@ -141,7 +141,8 @@ const TransactionsList = ({ requiredQuery, ...props }) => {
             <Button
               variant="outlined"
               size="small"
-              role="Presentation"
+              aria-label={`${row.status}`}
+              component="div"
               sx={{ pointerEvents: 'none' }}
               color={row.status === 'done' ? 'success' : 'warning'}
             >

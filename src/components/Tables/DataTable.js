@@ -131,6 +131,7 @@ const DataTable = () => {
                 <span>
                   <IconButton
                     size="large"
+                    aria-label="Remove selected items"
                     disabled={selectionModel.length < 1}
                     onClick={handleClickOpen}
                   >
@@ -140,7 +141,7 @@ const DataTable = () => {
               </Tooltip>
               <Tooltip title={`Add new ${title}`}>
                 <StyledLink to={`/create/${title}`}>
-                  <IconButton size="large">
+                  <IconButton size="large" aria-label={`Add new ${title}`}>
                     <Add />
                   </IconButton>
                 </StyledLink>

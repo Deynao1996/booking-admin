@@ -97,11 +97,24 @@ const CustomAppBar = ({ toggleDrawer }) => {
         </StyledTypographyLink>
         <StyledRightWrapper>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" color="inherit" onClick={toggleColorMode}>
+            <IconButton
+              size="large"
+              color="inherit"
+              onClick={toggleColorMode}
+              aria-label={
+                theme.palette.mode === 'light'
+                  ? 'Switch to dark mode'
+                  : 'Switch to light mode'
+              }
+            >
               {theme.palette.mode === 'light' ? <DarkMode /> : <LightMode />}
             </IconButton>
             <Tooltip title="Do not have messages">
-              <IconButton size="large" color="inherit">
+              <IconButton
+                size="large"
+                color="inherit"
+                aria-label="Notifications (0)"
+              >
                 <Badge badgeContent={0} color="error">
                   <MailIcon />
                 </Badge>

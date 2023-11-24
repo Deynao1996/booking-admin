@@ -92,7 +92,8 @@ export function createUserColumns(label) {
           <Button
             variant="outlined"
             size="small"
-            role="Presentation"
+            component="div"
+            aria-label={params.row.isVerified ? 'verified' : 'not verified'}
             sx={{ pointerEvents: 'none' }}
             color={btnColor}
           >
@@ -190,7 +191,8 @@ export function createHotelsColumns(label) {
           <Button
             variant="outlined"
             size="small"
-            role="Presentation"
+            component="div"
+            aria-label={params.row.featured ? 'featured' : 'not featured'}
             sx={{ pointerEvents: 'none' }}
             color={btnColor}
           >
@@ -310,7 +312,8 @@ export function createOrdersColumns(label) {
           <Button
             variant="outlined"
             size="small"
-            role="Presentation"
+            component="div"
+            aria-label={params.row.status}
             sx={{ pointerEvents: 'none' }}
             color={params.row.status === 'done' ? 'success' : 'warning'}
           >

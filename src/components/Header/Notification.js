@@ -50,7 +50,11 @@ const Notification = ({ isMobile }) => {
     <>
       <Tooltip title={!notificationsLength && 'Do not have notifications'}>
         <Box sx={{ display: 'flex' }} onClick={handleClick}>
-          <IconButton size="large" color="inherit">
+          <IconButton
+            size="large"
+            color="inherit"
+            aria-label={`Notifications (${notificationsLength})`}
+          >
             <Badge badgeContent={notificationsLength} color="error">
               <Notifications />
             </Badge>

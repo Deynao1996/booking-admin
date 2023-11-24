@@ -20,7 +20,7 @@ export const ThemeProvider = ({ children }) => {
     () =>
       createTheme({
         typography: {
-          fontFamily: ['Nunito', 'Roboto', 'sans-serif'].join(',')
+          fontFamily: ['Nunito', 'sans-serif'].join(',')
         },
         palette: {
           mode
