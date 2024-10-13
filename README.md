@@ -1,12 +1,37 @@
-# Booking Admin Dashboard - Admin Panel for Roomify Hotel Web Application
+<div align="center">
+  <br />
+      <img src="https://res.cloudinary.com/dkl9cqqui/image/upload/v1728815113/Dashboard-1_ahgo1c.png" alt="Project Banner">
+  <br />
+
+  <div>
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="react" />
+    <img src="https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white" alt="material-ui" />
+    <img src="https://img.shields.io/badge/Socket.io-010101?&style=for-the-badge&logo=Socket.io&logoColor=white" alt="socket" />
+    <img src="https://img.shields.io/badge/React_Query-FF4154?style=for-the-badge&logo=ReactQuery&logoColor=white" alt="react-query" />
+    <img src="https://img.shields.io/badge/Express%20js-000000?style=for-the-badge&logo=express&logoColor=white" alt="express" />
+    <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" alt="mongo-db" />
+  </div>
+
+  <h3 align="center">Roomify - A Hotel Booking Web Application</h3>
+
+   <div align="center">
+     I built this admin dashboard to streamline the management of the hotel booking platform. It provides essential tools for overseeing bookings, payments, orders, and users, allowing for smooth operations and efficient administration. This project also gave me the opportunity to deepen my experience in building full-stack applications and handling complex backend functionality.
+    </div>
+</div>
+
+## 📋 <a name="table">Table of Contents</a>
+
+1. 📘 [Intro](#introduction)
+2. 🛠️ [Tech Stack](#tech-stack)
+3. ✨ [Features](#features)
+4. 🚀 [Quick Start](#quick-start)
+5. 📄 [License](#license)
+
+## <a name="introduction">📘 Intro</a>
 
 Roomify Admin Dashboard is an admin panel for the Roomify hotel web application. It provides administrative capabilities for managing and controlling various aspects of the [Roomify project](https://github.com/Deynao1996/booking). This repository contains the client part of the admin dashboard, while the backend part can be found in the [booking-server repository](https://github.com/Deynao1996/booking-server).
 
 Explore the Roomify Admin Dashboard, which includes both dark and light themes, registration, authentication features, and functionalities for managing users, orders, hotels, rooms, and more.
-
-![Roomify Admin Dashboard Preview](https://res.cloudinary.com/dkl9cqqui/image/upload/v1700823601/mockup-admin_qf6seg.jpg)
-
-## Live Demo
 
 Check out the live demo of the Roomify Admin Dashboard: [Admin Dashboard Live Demo](https://dbvision-admin.netlify.app)
 
@@ -14,51 +39,75 @@ Please note that the demo is hosted on a free hosting service, and the server ma
 
 It's important to know that that some functionality in this demo has been limited for security reasons.
 
-## Source Code
+## <a name="tech-stack">🛠️ Tech Stack</a>
 
-Find the source code for this client part of the project on GitHub: [Admin Dashboard Source Code](https://github.com/Deynao1996/booking-admin)
+- React
+- Socket IO
+- Material UI
+- Express JS
+- Mongo DB
 
-## Backend Repository
+## <a name="features">✨ Features</a>
 
-For the backend part of the Roomify admin dashboard, visit the [booking-server repository](https://github.com/Deynao1996/booking-server).
+⭐ **Light and Dark Themes**: Switch between light and dark modes for an optimal viewing experience.
 
-## Getting Started
+⭐ **User Management**: Easily manage user accounts, including creating, updating, or removing users as needed.
 
-To run this project locally, follow these steps:
+⭐ **Order Management**: View and handle all orders efficiently, ensuring seamless booking and payment processing.
 
-### Prerequisites
+⭐ **Hotel Management**: Manage hotel information, including adding new hotels, editing details, and maintaining listings.
 
-Before you begin, ensure you have the following software and dependencies installed:
+⭐ **Room Management**: Administer room availability and details, ensuring that the hotel data is always up-to-date.
 
-- Node.js and npm
+⭐ **Real-Time Notifications**: When a user books a room, admins receive instant notifications on the dashboard through Socket.IO, enabling immediate action.
 
-### Installation
+## <a name="quick-start">🚀 Quick Start</a>
 
-1. Clone the repository to your local machine:
+Follow these steps to set up the project locally on your machine.
 
-   ```bash
-   git clone https://github.com/Deynao1996/booking-admin.git
-2. Navigate to the project directory:
-   ```bash
-   cd booking-admin
-3. Install project dependencies:
-   ```bash
-   npm install
+**Prerequisites**
 
-### Running the project
-To start the development server, run:
+Make sure you have the following installed on your machine:
+
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en)
+- [npm](https://www.npmjs.com/) (Node Package Manager)
+
+**Cloning the Repository**
+
+```bash
+git clone https://github.com/Deynao1996/booking-admin.git
+cd booking-admin
+```
+
+**Installation**
+
+Install the project dependencies using npm:
+
+```bash
+npm install
+```
+
+**Set Up Environment Variables**
+
+Create a new file named `.env` in the root of your project and add the following content:
+
+```env
+REACT_APP_WITH_SOCKETIO=
+REACT_APP_API=
+```
+
+Replace the placeholder values with your actual React Public credentials.
+
+**Running the Project**
+
 ```bash
 npm start
 ```
+
 This will launch the application in development mode.
 
-### Contributing
-We welcome contributions to make this project even better. If you'd like to contribute, please follow these guidelines:
-1. Fork this repository.
-2. Create a new branch for your changes.
-3. Make your improvements and commit them.
-4. Submit a pull request with a detailed description of your changes.
-
-## License
+## <a name="license">📄 License</a>
 
 This project is licensed under the [MIT License](https://github.com/Deynao1996/booking-admin/blob/master/LICENSE.txt).
+
